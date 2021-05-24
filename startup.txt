@@ -1,0 +1,3 @@
+Welcome to that1m8head Emacs Setup something or other!
+
+Do stuff to do stuff.

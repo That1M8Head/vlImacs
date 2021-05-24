@@ -7,12 +7,12 @@ Key
 Ctrl = C
  Alt = M
 
-Example: "Ctrl+X, K" means "C-x k"
+Example: Ctrl+X, K means C-x k
 
 Shortcuts
 ==========================================
 Ctrl+X, K        -   Close the current buffer.
-Ctrl+X, Ctrl+W   -   Write (save) the current buffer.
+Ctrl+X, W        -   Write (save) the current buffer.
 Ctrl+X, Alt+X    -   Quit Emacs entirely.
 Ctrl+X, Ctrl+F   -   Open a file.
 Alt+X            -   Run a command.

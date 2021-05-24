@@ -13,6 +13,6 @@ Shortcuts
 ==========================================
 Ctrl+X, K        -   Close the current buffer.
 Ctrl+X, Ctrl+W   -   Write (save) the current buffer.
-Ctrl+X, Alt+X    -   Quit Emacs entirely.
+Ctrl+X, Ctrl+C   -   Quit Emacs entirely.
 Ctrl+X, Ctrl+F   -   Visit (open) a file.
 Alt+X            -   Run a command.

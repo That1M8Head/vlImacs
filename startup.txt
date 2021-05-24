@@ -1,3 +1,11 @@
-Welcome to that1m8head Emacs Setup something or other!
+Welcome to Arsalan Kazmi <that1m8head>'s epic(ally basic) Emacs config!
 
 Do stuff to do stuff.
+
+Useful stuff to remember:
+
+C is Control. M is Alt.
+C-x then k closes the current buffer.
+C-x then M-x quits Emacs entirely.
+C-x then C-f opens a file.
+M-x lets you enter commands.

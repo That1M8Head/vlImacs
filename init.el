@@ -1,6 +1,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (set-face-attribute 'default nil :height 125)
-(load-theme 'dracula t)
+(if window-system
+    (load-theme 'dracula t))
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)

@@ -1,0 +1,3 @@
+Vim in Emacs! :0
+
+orayo

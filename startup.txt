@@ -11,8 +11,16 @@ Example: "Ctrl+X, K" means "C-x k"
 
 Shortcuts
 ==========================================
+Ctrl+X, Ctrl+S   -   Write to the currently opened file.
+Ctrl+X, Ctrl+W   -   Write to a specific file, essentially "Save As".
+Ctrl+X, Ctrl+F   -   Search for and open a file.
+
+Alt+X            -   Run a command by name.
+Ctrl+H           -   Get help.
+
+Ctrl+W           -   Kill (cut) a line or the selected text.
+Alt+W            -   Same as above, but do not delete text.
+Ctrl+Y           -   Yank (paste) text from the kill ring.
+
 Ctrl+X, K        -   Close the current buffer.
-Ctrl+X, Ctrl+W   -   Write (save) the current buffer.
 Ctrl+X, Ctrl+C   -   Quit Emacs entirely.
-Ctrl+X, Ctrl+F   -   Visit (open) a file.
-Alt+X            -   Run a command.

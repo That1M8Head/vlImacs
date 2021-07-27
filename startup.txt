@@ -22,5 +22,7 @@ Ctrl+W           -   Kill (cut) a line or the selected text.
 Alt+W            -   Same as above, but do not delete text.
 Ctrl+Y           -   Yank (paste) text from the kill ring.
 
+Ctrl+X, (1-9)	 -   Set the amount of buffers.
+Ctrl+X, B	 -   Switch buffers.
 Ctrl+X, K        -   Close the current buffer.
 Ctrl+X, Ctrl+C   -   Quit Emacs entirely.

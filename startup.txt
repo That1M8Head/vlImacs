@@ -1,6 +1,6 @@
 Welcome to Arsalan Kazmi <that1m8head>'s epic(ally basic) Emacs config!
 
-Do stuff to do stuff.
+This config uses Evil. To disable it, open init.el and comment out (evil-mode 1).
 
 Key
 ==========================================
@@ -9,13 +9,13 @@ Ctrl = C
 
 Example: "Ctrl+X, K" means "C-x k"
 
-Shortcuts
+Emacs Shortcuts
 ==========================================
 Ctrl+X, Ctrl+S   -   Write to the currently opened file.
 Ctrl+X, Ctrl+W   -   Write to a specific file, essentially "Save As".
 Ctrl+X, Ctrl+F   -   Search for and open a file.
 
-Alt+X            -   Run a command by name.
+Alt+X            -   Run a command by name. You can also use : like you would in Vi.
 Ctrl+H           -   Get help.
 
 Ctrl+W           -   Kill (cut) a line or the selected text.

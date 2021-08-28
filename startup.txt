@@ -1,31 +1,30 @@
 Welcome to Arsalan Kazmi <that1m8head>'s epic(ally basic) Emacs config!
 
 This config uses Evil.
-To temporarily disable it:
-Press Alt+X, type evil-mode, and hit Enter.
-(M-x evil-mode RET)
+To temporarily disable it: M-x evil-mode RET
 
 Key
 ==========================================
-Ctrl = C
- Alt = M
+  C = Control
+  M = Meta/Alt
+RET = Enter/Return
 
 Example: "Ctrl+X, K" means "C-x k"
 
-Emacs Shortcuts
+Common Emacs Shortcuts
 ==========================================
-Ctrl+X, Ctrl+S   -   Write to the currently opened file.
-Ctrl+X, Ctrl+W   -   Write to a specific file, essentially "Save As".
-Ctrl+X, Ctrl+F   -   Search for and open a file.
+C-x C-s     -   Write to the currently opened file.
+C-x C-w     -   Write to a specific file, essentially "Save As".
+C-x C-f     -   Search for and open a file.
 
-Alt+X            -   Run a command by name. You can also use : like you would in Vi.
-Ctrl+H           -   Get help.
+M-x         -   Run a command by name. (Vi command mode work too)
+C-h         -   Get help.
 
-Ctrl+W           -   Kill (cut) a line or the selected text.
-Alt+W            -   Same as above, but do not delete text.
-Ctrl+Y           -   Yank (paste) text from the kill ring.
+C-k         -   Kill (cut) a line or the selected text.
+M-w         -   Same as above, but do not delete text (essentially 'Copy').
+C-y         -   Yank (paste) text from the kill ring.
 
-Ctrl+X, (1-9)	 -   Set the amount of buffers.
-Ctrl+X, B	 -   Switch buffers.
-Ctrl+X, K        -   Close the current buffer.
-Ctrl+X, Ctrl+C   -   Quit Emacs entirely.
+C-x (1-9)   -   Set the amount of buffers.
+C-x b       -   Switch buffers.
+C-x k       -   Close the current buffer.
+C-x C-c	    -   Quit Emacs entirely.

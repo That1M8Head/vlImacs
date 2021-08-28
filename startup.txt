@@ -1,6 +1,9 @@
 Welcome to Arsalan Kazmi <that1m8head>'s epic(ally basic) Emacs config!
 
-This config uses Evil. To disable it, open init.el and comment out (evil-mode 1).
+This config uses Evil.
+To temporarily disable it:
+Press Alt+X, type evil-mode, and hit Enter.
+(M-x evil-mode RET)
 
 Key
 ==========================================

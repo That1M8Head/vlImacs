@@ -28,9 +28,6 @@
 (menu-bar-mode -1)
 (fringe-mode -1)
 
-;; Set ESC to C-g
-(global-set-key (kbd "<escape>") 'keyboard-quit)
-
 ;; Load startup file
 (view-file "~/.emacs.d/startup.txt")
 

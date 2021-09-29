@@ -1,6 +1,6 @@
 ### Stuff inside this config
 + [Evil](https://github.com/emacs-evil/evil)
-+ Simple white-on-black colour scheme set in [init.el](https://github.com/That1M8Head/.emacs.d/blob/main/init.el)
++ Simple white-on-black colour scheme set in [init.el](https://github.com/That1M8Head/.emacs.d/blob/main/init.el#L16)
 + [Custom text file](https://github.com/That1M8Head/.emacs.d/blob/main/startup.txt) [loaded on startup](https://github.com/That1M8Head/.emacs.d/blob/main/init.el#L16)
 + `tool-bar-mode`, `scroll-bar-mode`, `fringe-mode` and `menu-bar-mode` disabled
 

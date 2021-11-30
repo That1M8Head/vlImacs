@@ -27,16 +27,16 @@ C-x C-w     -   Write to a specific file, essentially "Save As".
 C-x C-f     -   Search for and open a file.
 
 M-x         -   Run a command by name. (Evil command mode works too)
-C-g	        -	Cancel the current operation.
+C-g	        -	  Cancel the current operation.
 C-h         -   Get help.
 
 C-k         -   Kill (cut) a line or the selected text.
 M-w         -   Same as above, but do not delete text (essentially 'Copy').
 C-y         -   Yank (paste) text from the kill ring.
 
-C-x 1	    -   Kill all windows except the active one.
-C-x 2	    -	Split windows vertically.
-C-x 3	    -	Split windows horizontally.
+C-x 1	      -   Kill all windows except the active one.
+C-x 2	      -	  Split windows vertically.
+C-x 3	      -	  Split windows horizontally.
 
 C-x b       -   Switch buffers.
 C-x k       -   Close the current buffer.

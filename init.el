@@ -6,7 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(powerline org-preview-html ## evil gnu-elpa-keyring-update company)))
+   '(w3m powerline org-preview-html ## evil gnu-elpa-keyring-update company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -17,10 +17,6 @@
 ;; Colours
 (set-background-color "#171b25")
 (set-foreground-color "white")
-
-;; Font
-(when (member "Source Code Pro" (font-family-list))
-  (set-face-attribute 'default nil :font "Source Code Pro 11"))
 
 ;; C indentation
 (setq c-default-style "linux"
@@ -46,3 +42,7 @@
 
 ;; Change to home directory
 (cd "~")
+
+;; Font
+(setq warning-minimum-level :error)
+(set-face-attribute 'default nil :font "Source Code Pro 11")

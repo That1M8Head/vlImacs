@@ -5,20 +5,22 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
- '(package-selected-packages '(## evil gnu-elpa-keyring-update company)))
+ '(package-selected-packages
+   '(powerline org-preview-html ## evil gnu-elpa-keyring-update company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mode-line ((t (:background "#171b25" :foreground "white" :box nil)))))
+ '(mode-line ((t (:background "#1C263F" :foreground "white" :box nil)))))
 
 ;; Colours
 (set-background-color "#171b25")
 (set-foreground-color "white")
 
 ;; Font
-(set-frame-font "Source Code Pro 11" nil t)
+(when (member "Source Code Pro" (font-family-list))
+  (set-face-attribute 'default nil :font "Source Code Pro 11"))
 
 ;; C indentation
 (setq c-default-style "linux"

@@ -6,7 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(magit w3m powerline org-preview-html ## evil gnu-elpa-keyring-update company)))
+   '(markdown-preview-mode markdown-mode magit w3m powerline org-preview-html ## evil gnu-elpa-keyring-update company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

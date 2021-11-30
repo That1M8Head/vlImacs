@@ -8,7 +8,7 @@
  '(display-time-mail-face nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(markdown-preview-eww markdown-preview-mode markdown-mode magit w3m powerline org-preview-html ## evil gnu-elpa-keyring-update company))
+   '(org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit w3m powerline org-preview-html ## evil gnu-elpa-keyring-update company))
  '(scalable-fonts-allowed t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

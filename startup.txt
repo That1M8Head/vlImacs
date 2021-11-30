@@ -25,6 +25,7 @@ C-k         -   Kill (cut) a line or the selected text.
 M-w         -   Same as above, but do not delete text (essentially 'Copy').
 C-y         -   Yank (paste) text from the kill ring.
 
+C-x 0	    -	Kill current window.
 C-x 1	    -   Kill all windows except the active one.
 C-x 2	    -	Split windows vertically.
 C-x 3	    -	Split windows horizontally.

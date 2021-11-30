@@ -6,7 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(w3m powerline org-preview-html ## evil gnu-elpa-keyring-update company)))
+   '(magit w3m powerline org-preview-html ## evil gnu-elpa-keyring-update company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -45,4 +45,4 @@
 
 ;; Font
 (setq warning-minimum-level :error)
-(set-face-attribute 'default nil :font "Source Code Pro 11")
+(set-face-attribute 'default nil :font "Source Code Pro 15")

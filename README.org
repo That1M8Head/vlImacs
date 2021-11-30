@@ -7,5 +7,7 @@ This config is good for me. It might be good for anyone else, but it might not b
 
 The main reason I made this config and put it up here is because Emacs' defaults are... /okay/.
 Not only in terms of functionality, but also aesthetics. It doesn't look that great out of the box, at least for me.
-Putting my config up here means I can do a simple src_shi[:exports code]{git pull} and easily have my desired config
+Putting my config up here means I can do a simple src_sh[:exports code]{git pull} and easily have my desired config
 wherever I have internet access and Emacs. *Boom, instant.*
+
+[[./emacs-screenie.png]]

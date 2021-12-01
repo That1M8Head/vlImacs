@@ -11,3 +11,8 @@ Putting my config up here means I can do a simple =git clone= and easily have my
 wherever I have internet access and Emacs. *Boom, instant.*
 
 [[./emacs-screenie.png]]
+
+*** Why not just use Spacemacs or Doom Emacs?
+Bloat. jk
+
+I do like Doom Emacs (a lot) but it kind of takes forever to install. With a lightweight config, all I need to do is =git clone= and I've already got a working setup. Plus, this way I can add stuff to it as I go.

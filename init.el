@@ -19,9 +19,12 @@
  '(mode-line-highlight ((t (:box nil))))
  '(mode-line-inactive ((t (:inherit mode-line :background "#171b25" :foreground "#aaaaaa" :box (:line-width 5 :color "#171b25") :weight light)))))
 
-;; Colours
-(set-background-color "#171b25")
-(set-foreground-color "white")
+;; Light and dark mode
+(load "~/.emacs.d/lightdark-m8.el")
+(require 'lightdark-m8)
+
+;; Set dark mode by default 
+(set-dark-mode)
 
 ;; Clock
 (display-time-mode 1)
@@ -47,8 +50,6 @@
 
 ;; Load startup file
 (view-file "~/.emacs.d/startup.txt")
-
-
 
 ;; Font
 (setq warning-minimum-level :error)

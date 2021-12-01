@@ -1,3 +1,6 @@
+#+TITLE: Arsalan Kazmi's Emacs config
+#+AUTHOR: Arsalan Kazmi <That1M8Head>
+
 ** An unnamed Emacs config tailored to... just what I like.
 
 This is my personal Emacs config, containing stuff that I'm just experimenting with for Emacs because Emacs is cool.
@@ -16,3 +19,9 @@ wherever I have internet access and Emacs. *Boom, instant.*
 Bloat. jk
 
 I do like Doom Emacs (a lot) but it kind of takes forever to install. With a lightweight config, all I need to do is =git clone= and I've already got a working setup. Plus, this way I can add stuff to it as I go.
+
+*** List of functions currently in this config
+#+BEGIN_SRC
+set-light-mode - Set the colour scheme to a light mode.
+set-dark-mode  - Set the colour scheme to a dark mode.
+#+END_SRC

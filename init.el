@@ -8,7 +8,7 @@
  '(display-time-mail-face nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
+   '(emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
  '(scalable-fonts-allowed t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -23,6 +23,7 @@
 (set-background-color "#171b25")
 (set-foreground-color "white")
 
+;; Clock
 (display-time-mode 1)
 
 ;; C indentation

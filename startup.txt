@@ -9,7 +9,8 @@ Key
   M = Meta/Alt
 RET = Enter/Return
 
-Example: "Ctrl+X, K" means "C-x k"
+Example: C-x k means you press Control+x, then k.
+Keys are case sensitive.
 
 Common Emacs Shortcuts
 ==========================================

@@ -48,8 +48,7 @@
 ;; Load startup file
 (view-file "~/.emacs.d/startup.txt")
 
-;; Change to home directory
-(cd "~")
+
 
 ;; Font
 (setq warning-minimum-level :error)

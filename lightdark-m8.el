@@ -1,3 +1,5 @@
+;; This file provides light mode and dark mode functions for Emacs.
+
 (provide 'lightdark-m8)
 
 (defun set-light-mode ()

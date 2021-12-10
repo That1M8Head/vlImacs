@@ -8,7 +8,7 @@
  '(display-time-mail-face nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
+   '(corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
  '(scalable-fonts-allowed t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -54,6 +54,12 @@
 ;; Pandoc hooks for Org and Markdown
 (add-hook 'org-mode-hook 'pandoc-mode)
 (add-hook 'markdown-mode-hook 'pandoc-mode)
+
+;; Line numbers mode
+(global-display-line-numbers-mode t)
+
+;; Visual line mode
+(global-visual-line-mode t)
 
 ;; Load startup file
 (view-file "~/.emacs.d/startup.txt")

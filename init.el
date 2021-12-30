@@ -66,6 +66,4 @@
 
 ;; Font
 (setq warning-minimum-level :error)
-(if (eq system-type 'windows-nt)
-    (set-face-attribute 'default nil :font "Source Code Pro 11")
-  (set-face-attribute 'default nil :font "Source Code Pro 15"))
+(set-face-attribute 'default nil :font "Source Code Pro")

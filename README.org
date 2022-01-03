@@ -3,7 +3,7 @@
 
 ** A personal Emacs config 
 
-VlImacs is my personal Emacs config, containing stuff that I want Emacs to have because I like Emacs and it's cool. /But =vi= is cool too, so this config includes =evil-mode=./
+VlImacs is my personal Emacs config, containing stuff that I want Emacs to have because I like Emacs and it's cool. /But Vim is cool too, so this config includes Evil./
 
 This config includes stuff that I personally like and use a lot. It may be useful to others.
 

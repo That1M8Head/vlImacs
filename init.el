@@ -19,6 +19,8 @@
  '(custom-button ((t (:background "#3b4263" :foreground "white" :box (:line-width 2 :color "#3b4263")))))
  '(custom-button-mouse ((t (:inherit custom-button :background "#4443ac" :box (:line-width 2 :color "#4443ac")))))
  '(custom-button-pressed ((t (:background "background" :foreground "#aaaaaa" :box (:line-width 2 :color "#1f2125")))))
+ '(eww-form-submit ((t (:inherit custom-button))))
+ '(eww-form-text ((t (:background "#505050" :foreground "white" :box (:line-width 2 :color "#505050")))))
  '(link ((t (:foreground "white" :underline t))))
  '(link-visited ((t (:inherit link :foreground "#888888"))))
  '(minibuffer-prompt ((t (:foreground "cyan"))))
@@ -30,7 +32,7 @@
  '(tab-bar-tab-inactive ((t (:inherit tab-bar-tab :background "#121315" :foreground "white" :box (:line-width 3 :color "#121315"))))))
 
 ;; Set colours 
-(when window-system (set-background-color "#1f2125"))
+(set-background-color "#1f2125")
 (set-foreground-color "#ffffff")
 
 ;; Clock
@@ -72,11 +74,20 @@
 (tab-bar-mode 1)
 
 ;; Load startup file
-(view-file "~/.emacs.d/startup.txt")
+;(view-file "~/.emacs.d/startup.txt")
 
 ;; Go to home directory
 (cd "~")
 
 ;; Font
-(setq warning-minimum-level :error)
 (set-face-attribute 'default nil :font "Source Code Pro")
+
+;; Startup message
+(add-hook 'emacs-startup-hook 'vlimacs-startup-func)
+(defun vlimacs-startup-func ()
+  "Do stuff on startup"
+  (let ((vlimacs-startup (get-buffer-create "Welcome")))
+    (with-current-buffer vlimacs-startup
+      (insert "Arsalan Kazmi's Emacs config\n")
+      (insert "This config uses evil-mode"))
+    (switch-to-buffer vlimacs-startup)))

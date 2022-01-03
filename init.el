@@ -73,21 +73,20 @@
 ;; Tab bar mode
 (tab-bar-mode 1)
 
-;; Load startup file
-;(view-file "~/.emacs.d/startup.txt")
-
-;; Go to home directory
-(cd "~")
-
 ;; Font
 (set-face-attribute 'default nil :font "Source Code Pro")
 
 ;; Startup message
 (add-hook 'emacs-startup-hook 'vlimacs-startup-func)
+(defun center-body ()
+  (let* ((max-text-width 70)
+         (margin (max 0 (/ (- (window-width) max-text-width) 2))))
+    (setq-local left-margin-width margin)
+    (setq-local right-margin-width margin)
+    (set-window-buffer nil (current-buffer))))
 (defun vlimacs-startup-func ()
   "Do stuff on startup"
   (let ((vlimacs-startup (get-buffer-create "Welcome")))
     (with-current-buffer vlimacs-startup
-      (insert "Arsalan Kazmi's Emacs config\n")
-      (insert "This config uses evil-mode"))
+      (insert-file-contents "~/.emacs.d/startup.txt"))
     (switch-to-buffer vlimacs-startup)))

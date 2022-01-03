@@ -1,7 +1,7 @@
-Welcome to Arsalan Kazmi <that1m8head>'s epic Emacs config! No longer basic.
+vlImacs - Arsalan Kazmi's Emacs config
 
 This config uses Evil.
-To temporarily disable it: M-x evil-mode RET
+If you're not a Vimmer, disable it with M-x evil-mode RET.
 
 Key
 ==========================================

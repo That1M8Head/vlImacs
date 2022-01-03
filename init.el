@@ -7,6 +7,7 @@
  '(column-number-mode t)
  '(display-time-mail-face nil)
  '(inhibit-startup-screen t)
+ '(mouse-1-click-follows-link t)
  '(package-selected-packages
    '(corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
  '(scalable-fonts-allowed t))
@@ -15,16 +16,22 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mode-line ((t (:background "#1C263F" :foreground "white" :box (:line-width 5 :color "#1C263F")))))
+ '(custom-button ((t (:background "#3b4263" :foreground "white" :box (:line-width 2 :color "#3b4263")))))
+ '(custom-button-mouse ((t (:inherit custom-button :background "#4443ac" :box (:line-width 2 :color "#4443ac")))))
+ '(custom-button-pressed ((t (:background "background" :foreground "#aaaaaa" :box (:line-width 2 :color "#1f2125")))))
+ '(link ((t (:foreground "white" :underline t))))
+ '(link-visited ((t (:inherit link :foreground "#888888"))))
+ '(minibuffer-prompt ((t (:foreground "cyan"))))
+ '(mode-line ((t (:background "#121315" :foreground "white" :box (:line-width 5 :color "#121315")))))
  '(mode-line-highlight ((t (:box nil))))
- '(mode-line-inactive ((t (:inherit mode-line :background "#171b25" :foreground "#aaaaaa" :box (:line-width 5 :color "#171b25") :weight light)))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "#1f2125" :foreground "#aaaaaa" :box (:line-width 5 :color "#1f2125") :weight light))))
+ '(tab-bar ((t (:background "#121315" :foreground "foreground"))))
+ '(tab-bar-tab ((t (:inherit tab-bar :background "background" :box (:line-width 2 :color "#1f2125")))))
+ '(tab-bar-tab-inactive ((t (:inherit tab-bar-tab :background "#121315" :foreground "white" :box (:line-width 3 :color "#121315"))))))
 
-;; Light and dark mode
-(load "~/.emacs.d/lightdark-m8.el")
-(require 'lightdark-m8)
-
-;; Set dark mode by default 
-(set-dark-mode)
+;; Set colours 
+(when window-system (set-background-color "#1f2125"))
+(set-foreground-color "#ffffff")
 
 ;; Clock
 (display-time-mode 1)
@@ -61,8 +68,14 @@
 ;; Visual line mode
 (global-visual-line-mode t)
 
+;; Tab bar mode
+(tab-bar-mode 1)
+
 ;; Load startup file
 (view-file "~/.emacs.d/startup.txt")
+
+;; Go to home directory
+(cd "~")
 
 ;; Font
 (setq warning-minimum-level :error)

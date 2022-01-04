@@ -9,7 +9,7 @@
  '(inhibit-startup-screen t)
  '(mouse-1-click-follows-link t)
  '(package-selected-packages
-   '(corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
+   '(python-mode corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
  '(scalable-fonts-allowed t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

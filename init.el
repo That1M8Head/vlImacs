@@ -42,6 +42,9 @@
 (setq c-default-style "linux"
       c-basic-offset 4)
 
+;; Tab width
+(setq tab-width 4)
+
 ;; MELPA
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))

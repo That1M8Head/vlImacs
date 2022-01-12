@@ -6,11 +6,16 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(display-time-mail-face nil)
+ '(evil-undo-system 'undo-fu)
  '(inhibit-startup-screen t)
  '(mouse-1-click-follows-link t)
  '(package-selected-packages
-   '(python-mode corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
- '(scalable-fonts-allowed t))
+   '(undo-fu writeroom-mode mixed-pitch org-variable-pitch dmenu auto-complete python-mode corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
+ '(scalable-fonts-allowed t)
+ '(writeroom-bottom-divider-width 0)
+ '(writeroom-extra-line-spacing 0.6)
+ '(writeroom-mode-line t)
+ '(writeroom-width 60))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -69,15 +74,13 @@
 
 ;; Line numbers mode
 (global-display-line-numbers-mode t)
+(add-hook 'org-mode-hook display-line-numbers-mode -1)
 
 ;; Visual line mode
 (global-visual-line-mode t)
 
 ;; Tab bar mode
 (tab-bar-mode 1)
-
-;; Font
-(set-face-attribute 'default nil :font "Source Code Pro")
 
 ;; Startup message
 (add-hook 'emacs-startup-hook 'vlimacs-startup-func)
@@ -93,3 +96,34 @@
     (with-current-buffer vlimacs-startup
       (insert-file-contents "~/.emacs.d/startup.txt"))
     (switch-to-buffer vlimacs-startup)))
+
+;; Auto complete
+(auto-complete-mode 1)
+
+;; Load path
+(add-to-list 'load-path "~/.emacs.d/load/")
+
+;; Display images in Org by default
+(add-hook 'org-mode-hook 'org-display-inline-images)
+
+;; Company mode
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; Hide emphasis markers but with org-appear
+(setq org-hide-emphasis-markers t)
+(require 'org-appear)
+(add-hook 'org-mode-hook 'org-appear-mode)
+
+;; Font
+(set-face-attribute 'default nil :font "Source Code Pro")
+(add-hook 'org-mode-hook 'mixed-pitch-mode)
+(use-package mixed-pitch
+    :hook
+    (text-mode . mixed-pitch-mode)
+    :config
+        (set-face-attribute 'default nil :font "Source Code Pro")
+    (set-face-attribute 'fixed-pitch nil :font "Source Code Pro")
+    (set-face-attribute 'variable-pitch nil :font "Martel"))
+
+;; Writeroom mode
+(add-hook 'org-mode-hook 'writeroom-mode)

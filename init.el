@@ -6,11 +6,9 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(evil-undo-system 'undo-fu)
+ '(global-display-line-numbers-mode t)
+ '(global-visual-line-mode t)
  '(inhibit-startup-screen t)
- '(mode-line-format
-   '("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position evil-mode-line-tag
-     (vc-mode vc-mode)
-     "  " "%m" mode-line-misc-info mode-line-end-spaces))
  '(mouse-1-click-follows-link t)
  '(package-selected-packages
    '(org-bullets undo-fu writeroom-mode mixed-pitch org-variable-pitch dmenu auto-complete python-mode corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))

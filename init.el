@@ -117,10 +117,3 @@
 ;; Font
 (set-face-attribute 'default nil :font "Source Code Pro")
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
-(use-package mixed-pitch
-    :hook
-    (text-mode . mixed-pitch-mode)
-    :config
-        (set-face-attribute 'default nil :font "Source Code Pro")
-    (set-face-attribute 'fixed-pitch nil :font "Source Code Pro")
-    (set-face-attribute 'variable-pitch nil :font "Calibri"))

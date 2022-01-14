@@ -12,7 +12,7 @@ The main reason I made this config and put it up here is because Emacs' defaults
 Not only in terms of functionality, but also aesthetics. It doesn't look that great out of the box, at least for me.
 Putting my config up here means I can do a simple =git clone= and easily have my desired config wherever I have internet access and an Emacs installation.
 
-[[[[./emacs-screenie.png]]]]
+[[./emacs-screenie.png]]
 
 *** Why "vlImacs"?
 I needed a name, and I'm not good at coming up with names.

@@ -5,12 +5,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(display-time-mail-face nil)
  '(evil-undo-system 'undo-fu)
  '(inhibit-startup-screen t)
+ '(mode-line-format
+   '("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position evil-mode-line-tag
+     (vc-mode vc-mode)
+     "  " "%m" mode-line-misc-info mode-line-end-spaces))
  '(mouse-1-click-follows-link t)
  '(package-selected-packages
-   '(undo-fu writeroom-mode mixed-pitch org-variable-pitch dmenu auto-complete python-mode corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
+   '(org-bullets undo-fu writeroom-mode mixed-pitch org-variable-pitch dmenu auto-complete python-mode corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
  '(scalable-fonts-allowed t)
  '(writeroom-bottom-divider-width 0)
  '(writeroom-extra-line-spacing 0.6)
@@ -74,13 +77,12 @@
 
 ;; Line numbers mode
 (global-display-line-numbers-mode t)
-(add-hook 'org-mode-hook display-line-numbers-mode -1)
 
 ;; Visual line mode
 (global-visual-line-mode t)
 
 ;; Tab bar mode
-(tab-bar-mode 1)
+(tab-bar-mode t)
 
 ;; Startup message
 (add-hook 'emacs-startup-hook 'vlimacs-startup-func)
@@ -123,7 +125,4 @@
     :config
         (set-face-attribute 'default nil :font "Source Code Pro")
     (set-face-attribute 'fixed-pitch nil :font "Source Code Pro")
-    (set-face-attribute 'variable-pitch nil :font "Martel"))
-
-;; Writeroom mode
-(add-hook 'org-mode-hook 'writeroom-mode)
+    (set-face-attribute 'variable-pitch nil :font "Calibri"))

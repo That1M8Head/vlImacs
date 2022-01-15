@@ -2,9 +2,9 @@
 #+AUTHOR: Arsalan Kazmi <That1M8Head>
 #+HTML_HEAD: <link rel="stylesheet" href="https://that1m8head.github.io/standard.css">
 
-** A personal Emacs config 
+** A personal Emacs config
 
-:warning: *This config is deprecated, I now use [[https://github.com/hlissner/doom-emacs][Doom Emacs]]* :warning:
+*This config is deprecated, I now use [[https://github.com/hlissner/doom-emacs][Doom Emacs]]*
 
 VlImacs is my personal Emacs config, containing stuff that I want Emacs to have because I like Emacs and it's cool. /But Vim is cool too, so this config includes Evil./
 

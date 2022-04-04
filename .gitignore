@@ -7,3 +7,4 @@ elpa/
 .local/
 *.data
 recentf
+*.dat

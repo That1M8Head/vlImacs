@@ -4,23 +4,12 @@
 
 ** A personal Emacs config
 
-*This config is deprecated, I now use [[https://github.com/hlissner/doom-emacs][Doom Emacs]]*
-
 VlImacs is my personal Emacs config, containing stuff that I want Emacs to have because I like Emacs and it's cool. /But Vim is cool too, so this config includes Evil./
 
-This config includes stuff that I personally like and use a lot. It may be useful to others.
-
-The main reason I made this config and put it up here is because Emacs' defaults are... /okay/.
-Not only in terms of functionality, but also aesthetics. It doesn't look that great out of the box, at least for me.
-Putting my config up here means I can do a simple =git clone= and easily have my desired config wherever I have internet access and an Emacs installation.
+(Yes, I use Doom Emacs sometimes, but I still really like tinkering with Emacs sfhslffhgdc)
 
 [[./emacs-screenie.png]]
 
 *** Why "vlImacs"?
 I needed a name, and I'm not good at coming up with names.
 So I randomly came up with it.
-
-*** Why not just use Spacemacs or Doom Emacs?
-Bloat. jk
-
-I do like Doom Emacs (a lot) but it kind of takes forever to install. With a lightweight config, all I need to do is =git clone= and I've already got a working setup. Plus, this way I can add stuff to it as I go.

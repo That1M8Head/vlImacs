@@ -13,7 +13,7 @@
  '(scalable-fonts-allowed t))
 
 ;; Load path
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/load/")
 
 ;; Set theme
 (use-package doom-themes

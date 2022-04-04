@@ -5,41 +5,26 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(custom-safe-themes
+   '("234dbb732ef054b109a9e5ee5b499632c63cc24f7c2383a849815dacc1727cb6" default))
  '(evil-undo-system 'undo-fu)
- '(global-display-line-numbers-mode t)
- '(global-visual-line-mode t)
  '(inhibit-startup-screen t)
  '(mouse-1-click-follows-link t)
  '(package-selected-packages
-   '(org-bullets undo-fu writeroom-mode mixed-pitch org-variable-pitch dmenu auto-complete python-mode corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
- '(scalable-fonts-allowed t)
- '(writeroom-bottom-divider-width 0)
- '(writeroom-extra-line-spacing 0.6)
- '(writeroom-mode-line t)
- '(writeroom-width 60))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-button ((t (:background "#3b4263" :foreground "white" :box (:line-width 2 :color "#3b4263")))))
- '(custom-button-mouse ((t (:inherit custom-button :background "#4443ac" :box (:line-width 2 :color "#4443ac")))))
- '(custom-button-pressed ((t (:background "background" :foreground "#aaaaaa" :box (:line-width 2 :color "#1f2125")))))
- '(eww-form-submit ((t (:inherit custom-button))))
- '(eww-form-text ((t (:background "#505050" :foreground "white" :box (:line-width 2 :color "#505050")))))
- '(link ((t (:foreground "white" :underline t))))
- '(link-visited ((t (:inherit link :foreground "#888888"))))
- '(minibuffer-prompt ((t (:foreground "cyan"))))
- '(mode-line ((t (:background "#121315" :foreground "white" :box (:line-width 5 :color "#121315")))))
- '(mode-line-highlight ((t (:box nil))))
- '(mode-line-inactive ((t (:inherit mode-line :background "#1f2125" :foreground "#aaaaaa" :box (:line-width 5 :color "#1f2125") :weight light))))
- '(tab-bar ((t (:background "#121315" :foreground "foreground"))))
- '(tab-bar-tab ((t (:inherit tab-bar :background "background" :box (:line-width 2 :color "#1f2125")))))
- '(tab-bar-tab-inactive ((t (:inherit tab-bar-tab :background "#121315" :foreground "white" :box (:line-width 3 :color "#121315"))))))
+   '(ivy-posframe all-the-icons-ivy counsel ivy evil-leader dashboard centaur-tabs doom-modeline doom-themes org-bullets undo-fu writeroom-mode mixed-pitch org-variable-pitch dmenu auto-complete python-mode corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
+ '(scalable-fonts-allowed t))
 
-;; Set colours 
-(set-background-color "#1f2125")
-(set-foreground-color "#ffffff")
+;; Set theme
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold t 
+        doom-themes-enable-italic t)
+  (load-theme 'doom-dracula t)
+  (doom-themes-neotree-config)
+  (setq doom-themes-treemacs-theme "doom-atom")
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config))
 
 ;; Clock
 (display-time-mode 1)
@@ -56,8 +41,36 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+;; Functions for config
+(defun edit-config ()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
+(defun reload-config ()
+  (interactive)
+  (load-file "~/.emacs.d/init.el"))
+
 ;; Evil
 (require 'evil)
+(require 'evil-leader)
+(global-evil-leader-mode)
+(use-package evil-leader
+  :config
+  (global-evil-leader-mode)
+  (evil-leader/set-leader "<SPC>")
+  (evil-leader/set-key
+    "ff" 'counsel-find-file
+    "fs" 'save-buffer
+    "fS" 'write-file
+    "bb" 'ivy-switch-buffer
+    "br" 'revert-buffer
+    "rc" 'reload-config
+    "fp" 'edit-config
+    "bk" 'kill-this-buffer
+    "qq" 'save-buffers-kill-emacs
+    "j" 'centaur-tabs-backward
+    "k" 'centaur-tabs-forward
+    "h" help-map
+    ))
 (evil-mode 1)
 
 ;; Disable unneeded stuff
@@ -79,23 +92,8 @@
 ;; Visual line mode
 (global-visual-line-mode t)
 
-;; Tab bar mode
-(tab-bar-mode t)
-
-;; Startup message
-(add-hook 'emacs-startup-hook 'vlimacs-startup-func)
-(defun center-body ()
-  (let* ((max-text-width 70)
-         (margin (max 0 (/ (- (window-width) max-text-width) 2))))
-    (setq-local left-margin-width margin)
-    (setq-local right-margin-width margin)
-    (set-window-buffer nil (current-buffer))))
-(defun vlimacs-startup-func ()
-  "Do stuff on startup"
-  (let ((vlimacs-startup (get-buffer-create "Welcome")))
-    (with-current-buffer vlimacs-startup
-      (insert-file-contents "~/.emacs.d/startup.txt"))
-    (switch-to-buffer vlimacs-startup)))
+;; Centaur tabs
+(centaur-tabs-mode t)
 
 ;; Auto complete
 (auto-complete-mode 1)
@@ -115,5 +113,67 @@
 (add-hook 'org-mode-hook 'org-appear-mode)
 
 ;; Font
-(set-face-attribute 'default nil :font "Source Code Pro")
+(set-face-attribute 'default nil :font "Iosevka Extended" :height 110)
 (add-hook 'org-mode-hook 'mixed-pitch-mode)
+
+;; Doom modeline
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-height 30))
+
+;; Dashboard
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+;; Line numbers
+(setq display-line-numbers 'relative)
+(global-display-line-numbers-mode)
+
+;; Visual line mode
+(global-visual-line-mode t)
+
+;; Writeroom
+(setq writeroom-bottom-divider-width 0)
+(setq writeroom-extra-line-spacing 0.6)
+(setq writeroom-mode-line t)
+(setq writeroom-width 200)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; Ivy
+(ivy-mode)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+;; enable this if you want `swiper' to use it
+;; (setq search-default-mode #'char-fold-to-regexp)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+
+(require 'ivy-posframe)
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+(setq ivy-posframe-border-width 15)
+(ivy-posframe-mode 1)
+(ivy-mode t)

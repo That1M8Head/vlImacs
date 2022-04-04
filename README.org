@@ -1,6 +1,5 @@
 #+TITLE: vlImacs
 #+AUTHOR: Arsalan Kazmi <That1M8Head>
-#+HTML_HEAD: <link rel="stylesheet" href="https://that1m8head.github.io/standard.css">
 
 ** A personal Emacs config
 

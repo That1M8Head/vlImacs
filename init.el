@@ -98,7 +98,7 @@
 
 ;; Line numbers
 (setq display-line-numbers-type 'relative)
-(display-line-numbers-mode)
+(display-line-numbers-mode t)
 
 ;; Auto complete
 (auto-complete-mode 1)

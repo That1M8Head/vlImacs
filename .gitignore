@@ -3,3 +3,7 @@
 url/
 games/
 .DS_Store
+elpa/
+.local/
+*.data
+recentf

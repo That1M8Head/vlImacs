@@ -4,15 +4,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(custom-safe-themes
-   '("234dbb732ef054b109a9e5ee5b499632c63cc24f7c2383a849815dacc1727cb6" default))
+ '(custom-safe-themes t)
  '(evil-undo-system 'undo-fu)
  '(inhibit-startup-screen t)
  '(mouse-1-click-follows-link t)
  '(package-selected-packages
    '(ivy-posframe all-the-icons-ivy counsel ivy evil-leader dashboard centaur-tabs doom-modeline doom-themes org-bullets undo-fu writeroom-mode mixed-pitch org-variable-pitch dmenu auto-complete python-mode corfu pandoc-mode pandoc emojify org-appear markdown-preview-eww markdown-preview-mode markdown-mode magit powerline org-preview-html ## evil gnu-elpa-keyring-update company))
  '(scalable-fonts-allowed t))
+
+;; Load path
+(add-to-list 'load-path "~/.emacs.d/")
 
 ;; Set theme
 (use-package doom-themes
@@ -28,6 +29,9 @@
 
 ;; Clock
 (display-time-mode 1)
+
+;; Highlight lines
+(global-hl-line-mode 1)
 
 ;; C indentation
 (setq c-default-style "linux"
@@ -67,6 +71,7 @@
     "fp" 'edit-config
     "bk" 'kill-this-buffer
     "qq" 'save-buffers-kill-emacs
+    "tz" 'writeroom-mode
     "j" 'centaur-tabs-backward
     "k" 'centaur-tabs-forward
     "h" help-map
@@ -82,18 +87,18 @@
 ;; Set backup directory
 (setq backup-directory-alist `(("." . "~/.saves")))
 
-;; Pandoc hooks for Org and Markdown
-(add-hook 'org-mode-hook 'pandoc-mode)
+;; Pandoc hook
 (add-hook 'markdown-mode-hook 'pandoc-mode)
-
-;; Line numbers mode
-(global-display-line-numbers-mode t)
 
 ;; Visual line mode
 (global-visual-line-mode t)
 
 ;; Centaur tabs
 (centaur-tabs-mode t)
+
+;; Line numbers
+(setq display-line-numbers-type 'relative)
+(display-line-numbers-mode)
 
 ;; Auto complete
 (auto-complete-mode 1)
@@ -107,14 +112,9 @@
 ;; Company mode
 (add-hook 'after-init-hook 'global-company-mode)
 
-;; Hide emphasis markers but with org-appear
-(setq org-hide-emphasis-markers t)
-(require 'org-appear)
-(add-hook 'org-mode-hook 'org-appear-mode)
-
 ;; Font
 (set-face-attribute 'default nil :font "Iosevka Extended" :height 110)
-(add-hook 'org-mode-hook 'mixed-pitch-mode)
+(set-face-attribute 'variable-pitch nil :font "Martel")
 
 ;; Doom modeline
 (use-package doom-modeline
@@ -129,24 +129,15 @@
   :config
   (dashboard-setup-startup-hook))
 
-;; Line numbers
-(setq display-line-numbers 'relative)
-(global-display-line-numbers-mode)
-
 ;; Visual line mode
 (global-visual-line-mode t)
 
 ;; Writeroom
 (setq writeroom-bottom-divider-width 0)
-(setq writeroom-extra-line-spacing 0.6)
+(setq writeroom-extra-line-spacing 0.3)
 (setq writeroom-mode-line t)
-(setq writeroom-width 200)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(setq writeroom-width 100)
+(require 'writeroom-width-control)
 
 ;; Ivy
 (ivy-mode)
@@ -177,3 +168,27 @@
 (setq ivy-posframe-border-width 15)
 (ivy-posframe-mode 1)
 (ivy-mode t)
+
+;; Org
+(setq org-hide-emphasis-markers t)
+(add-hook 'org-mode-hook 'org-appear-mode)
+(add-hook 'org-mode-hook 'org-indent-mode)
+(add-hook 'org-mode-hook 'mixed-pitch-mode)
+(require 'org-starless)
+
+(defun org-heading-plus-size ()
+  "Sets font sizes for Org headings, title and info."
+  (set-face-attribute 'org-level-3 nil :height 1.2)
+  (set-face-attribute 'org-level-2 nil :height 1.3)
+  (set-face-attribute 'org-level-1 nil :height 1.5)
+  (set-face-attribute 'org-document-title nil :height 1.7)
+  (set-face-attribute 'org-document-info nil :height 1.2)
+  (setq-default org-ellipsis '" ▼ "))
+(add-hook 'org-mode-hook 'org-heading-plus-size)
+(add-hook 'org-mode-hook #'org-starless-mode)
+
+(setq org-indent-indentation-per-level 1)
+(setq org-adapt-indentation nil)
+
+;; Count words
+(global-set-key (kbd "M-=") 'count-words)

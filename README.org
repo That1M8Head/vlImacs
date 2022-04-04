@@ -1,10 +1,10 @@
 #+TITLE: vlImacs
 #+AUTHOR: Arsalan Kazmi <That1M8Head>
+#+OPTIONS: \n:t
 
 ** A personal Emacs config
-
 vlImacs (pronounced "vlee-macs") is my personal Emacs config, containing stuff that I want Emacs to have because I like Emacs and it's cool. /But Vim is cool too, so this config includes Evil./
-
+    
 (Yes, I use Doom Emacs sometimes, but I still really like tinkering with Emacs sfhslffhgdc)
 
 [[./emacs-screenie.png]]
